@@ -7,10 +7,7 @@ const path = require('path');
 const folderPath1 = '../DadosAbertos-SEDUC/database/';
 const folderPath2 = '../DadosAbertos-SEDUC/page/database/';
 */
-// TAMANHO DA AMOSTRA
-// ANOS INICIAIS - 1464
-// ANOS FINAIS - 2051
-// ENSINO MEDIO - 2010
+
 
 // Organiza o conjunto de pastas de database.
 //const folders = fs.readdirSync(folderPath1);

@@ -721,7 +721,7 @@ JSON.stringify([{   ENSINO_MEDIO: mediaEM,
 
 */
 
-
+/*
 dataFrame.readFileSync('../DadosAbertos-SEDUC/page/database/BASE_FORMACAO_0419a.csv').parseCSV()
                                         .where(row => row.NMCARGO_E.toString().includes('PROFESSOR'))
                                         .asCSV().writeFileSync('../DadosAbertos-SEDUC/page/database/BASE_FORMACAO_0419_2.csv')
@@ -808,3 +808,30 @@ JSON.stringify([{   ENSINO_MEDIO: mediaEM,
                     PORC_MEST: porcMest,
                     PORC_DOUT: porcDout
 }]))
+*/
+
+const files = ['IDESP_AI_2018.json','IDESP_AI_2017.json',
+'IDESP_AF_2018.json','IDESP_AF_2017.json',
+'IDESP_EM_2018.json','IDESP_EM_2017.json']
+
+var quantEscolas = []
+
+for(let i of files){
+    
+    console.log(i)
+    var escolas = dataFrame.readFileSync(path.join('../DadosAbertos-SEDUC/page/database/IDESP', i))
+                    .parseJSON().count()
+                    console.log('Escolas: '+escolas)
+        
+        var info = {
+                    ESCOLAS: i.substr(0, i.length-4),
+                    NUM_ESCOLAS: escolas
+        }
+        
+        quantEscolas.push(info)
+    
+}
+fs.writeFileSync('../DadosAbertos-SEDUC/page/database/IDESP/quantidade_escolas_IDESP.json',
+                JSON.stringify(quantEscolas))
+                
+                
