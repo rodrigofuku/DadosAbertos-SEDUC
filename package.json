@@ -1,0 +1,26 @@
+{
+  "name": "dadosabertos-seduc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigofuku/DadosAbertos-SEDUC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigofuku/DadosAbertos-SEDUC/issues"
+  },
+  "homepage": "https://github.com/rodrigofuku/DadosAbertos-SEDUC#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "data-forge": "^1.8.4",
+    "data-forge-fs": "0.0.7",
+    "data-forge-plot": "^0.6.3"
+  }
+}

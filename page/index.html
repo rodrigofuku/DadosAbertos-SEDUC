@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-2" align="center"><img src="img/logo_seduc.png" width="150px"></div>
+    
+        <nav class="navbar navbar-dark bg-primary navbar-fixed-top col-10">
+            <div class="container">
+                <button onclick="{professores()}" type="button" class="btn btn-secondary btn-md tamanho_botao">PROFESSORES</button>
+                <button onclick="{gestores()}" type="button" class="btn btn-secondary btn-md tamanho_botao">DIRETORES</button>
+                <button onclick="{idesp()}" type="button" class="btn btn-secondary btn-md tamanho_botao">IDESP</button>
+                <button onclick="{saresp()}" type="button" class="btn btn-secondary btn-md tamanho_botao">SARESP</button>
+            </div>
+       
+    </nav>
+    </div>
+    <div class="title">
+        <h1><u>Desafio Dados Abertos - SEDUC</u></h1>
+    </div>
+    
+    <div class="introducao">
+        <p>
+            Esta página é destinada à apresentação dos resultados obtidos 
+            com a análise dos arquivos disponibilizados na plataforma Dados Abertos
+            da Secretaria da Educação do Estado de São Paulo.
+        </p>
+        <br>
+        <p align="center">
+            Para ter acesso aos resultados, <b>clique nos botões na parte superior
+            da tela</b>.
+        </p>
+    </div>
+    <div class="autor">    
+        <br><br><br>
+        <p align="right">
+           <a href="results/autor.html"> 
+                <b>Rodrigo Fukugauti</b>
+           </a>
+        </p>
+    </div>
+    <div class="credenciais"> 
+        <p align="right">
+            <i>
+                Professor de Tecnologia e Inovação<br>
+                Professor de Educação Física<br>
+            <b>
+                E. E. Comendador Emílio Romi
+            </b>
+            </i>
+        </p>
+
+    
+    <script type="text/javascript" src="script/initialpage.js"></script>
+    
+</body>
+
+
+</html>

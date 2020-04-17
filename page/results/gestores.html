@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Diretores</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-2" align="center"><img src="../img/logo_seduc.png" width="150px"></div>
+    
+        <nav class="navbar navbar-dark bg-primary navbar-fixed-top col-10">
+            <div class="container">
+                <button onclick="{paginaInicial()}" type="button" class="btn btn-secondary btn-md tamanho_botao">INÍCIO</button>
+                <button onclick="{professores()}" type="button" class="btn btn-secondary btn-md tamanho_botao">PROFESSORES</button>
+                <button onclick="{idesp()}" type="button" class="btn btn-secondary btn-md tamanho_botao">IDESP</button>
+                <button onclick="{saresp()}" type="button" class="btn btn-secondary btn-md tamanho_botao">SARESP</button>
+            </div>
+       
+    </nav>
+    </div>
+    <div class="title">
+        <h1><u>DIRETORES</u></h1>
+    </div>
+    <br>
+    <div class="container row">
+        <div class="col-4">
+              <div align="center">
+                  <h5><b>Total</b></h5>
+                  <h2><b>6479</b></h2>
+                  <h3>professores</h3>
+              </div>
+              <div align="center" id="homens_mulheres">
+                  
+              </div>
+        </div>
+        <div class="col-4">
+             <div align="center">
+                  <h5><b>Maioria</b></h5>
+                  <h2><b>73.95%</b></h2>
+                  <h3>mulheres</h3>
+              </div>
+              
+             <div align="center" id="porc_homens_mulheres">
+                  
+              </div>
+        </div>
+        <div class="col-4">
+              <div align="center">
+                  <h5><b>Média da idade</b></h5>
+                  <h2><b>50.31</b></h2>
+                  <h3>anos</h3>
+                  
+              </div>
+              <div align="center" id="idade_experiencia">
+        
+              </div>
+        </div>
+    </div>
+    
+ 
+ <br>
+ 
+     <div class="container row">
+        <div class="col-4">
+              <div align="center">
+                  <h5><b>Formação</b></h5>
+                  <h2><b>94.86%</b></h2>
+                  <h3>possui graduação</h3>
+              </div>
+        </div>
+        <div class="col-4">
+         <div align="center" id="formacao_gestores_total">
+        
+              </div>
+        </div>
+        <div class="col-4">
+              <div align="center">
+                  <h5><b>Média da experiência</b></h5>
+                  <h2><b>10.65</b></h2>
+                  <h3>anos</h3>
+              </div>
+        </div>
+    </div>
+    
+    
+  
+    <script type="text/javascript" src="../script/initialpage.js"></script>
+   
+   <script>
+      let grafico1 = {
+              "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+              "description": "Quantidade de homens e mulheres.",
+              "width": 250,
+              "height": 200,
+              "data": {
+                "values": [
+                  {"SEXO": "Masculino", "TOTAL": 1688, "color": "#4285f4"},
+                  {"SEXO": "Feminino", "TOTAL": 4791, "color": "#ea4335"}
+                ]
+              },
+              "mark": "bar",
+              "encoding": {
+                "x": {"field": "SEXO", "type": "ordinal", "axis": {"labelAngle": 0}},
+                "y": {"field": "TOTAL", "type": "quantitative"},
+                "color": {
+                          "field": "color",
+                          "type": "nominal",
+                          "scale": null
+                            }
+              },
+            }
+            vegaEmbed("#homens_mulheres", grafico1, {});
+
+   </script>
+   
+   <script>
+       let grafico2 = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "description": "Porcentagem de homens e mulheres.",
+                  "width": 250,
+                  "height": 200,
+                  "data": {
+                    "values": [
+                      {"SEXO": "Feminino", "value": 73.95},
+                      {"SEXO": "Masculino", "value": 26.05}
+                    ]
+                  },
+                  "mark": {"type": "arc", "innerRadius": 65},
+                  "encoding": {
+                    "theta": {"field": "value", "type": "quantitative"},
+                    "color": {"field": "SEXO", "type": "nominal",
+                        "scale": {
+                            "domain":["Masculino", "Feminino"],
+                            "range":["#4285f4", "#ea4335"]
+                        }
+                    }
+                  },
+                  "view": {"stroke": null}
+                }
+                
+                 vegaEmbed("#porc_homens_mulheres", grafico2, {});
+   </script>
+   
+    <script>
+        let grafico3 = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "description": "Media, minimo e maximo da idade e da experiencia.",
+                  "width": 250,
+                  "height": 200,
+                  "data": {
+                      "values": [
+                {"DADO":"Idade","MEDIA":50.31, "color":"#ea4335"},
+                {"DADO":"Idade","MEDIA":27, "color":"#ea4335"},
+                {"DADO":"Idade","MEDIA":73, "color":"#ea4335"},
+                                          
+                {"DADO":"Experiencia","MEDIA":10.65, "color":"#4285f4"},
+                {"DADO":"Experiencia","MEDIA":0, "color":"#4285f4"},
+                {"DADO":"Experiencia","MEDIA":42, "color":"#4285f4"}
+                    ]
+                },
+                  "mark": {
+                    "type": "boxplot",
+                    "extent": "min-max"
+                  },
+                  "encoding": {
+                    "x": {
+                        "field": "DADO", 
+                        "type": "ordinal", 
+                        "axis": {"title": "EXPERIENCIA/IDADE","labelAngle": 0}
+                        },
+                    "y": {
+                      "field": "MEDIA",
+                      "type": "quantitative",
+                      "axis": {"title": "ANOS"}
+                    },
+                    "color": {
+                            "field": "color",
+                            "type": "nominal",
+                            "scale": null
+                            }
+                  }
+                }
+
+                vegaEmbed("#idade_experiencia", grafico3, {});
+  
+ 
+    
+ 
+ 
+   /*
+   Vermelho - #ea4335
+Amarelo - #fbbc05
+Verde - #34a853
+Azul - #4285f4
+*/
+    </script>
+    
+       <script>
+      let grafico4 = {
+              "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+              "description": "Formação dos diretores.",
+              "width": 250,
+              "height": 200,
+              "data": {
+                "values": [
+                  {"FORMACAO": "Ensino Médio", "TOTAL": 4.22, "color": "#4285f4"},
+                  {"FORMACAO": "Graduação", "TOTAL": 94.86, "color": "#ea4335"},
+                  {"FORMACAO": "Especialização", "TOTAL": 15.40, "color": "#34a853"},
+                  {"FORMACAO": "Mestrado", "TOTAL": 7.08, "color": "#4285f4"},
+                  {"FORMACAO": "Doutorado", "TOTAL": 0.81, "color": "#4285f4"},
+                  
+                ]
+              },
+              "mark": "bar",
+              "encoding": {
+                "x": {"field": "FORMACAO", "type": "ordinal"},
+                "y": {"field": "TOTAL", "type": "quantitative"},
+                "color": {
+                          "field": "color",
+                          "type": "nominal",
+                          "scale": null
+                            }
+              },
+            }
+            vegaEmbed("#formacao_gestores_total", grafico4, {});
+
+   </script>
+
+    
+ 
+</body>
+
+
+</html>

@@ -1,0 +1,50 @@
+[
+    {
+        "ANO": "2017",
+        "GRUPO": "Melhores",
+        "NIVEL": "Anos Iniciais",
+        "DIRETOR": 98,
+        "VICE_DIRETOR": 98,
+        "COORDENADOR": 99
+    },
+    {
+        "ANO": "2017",
+        "GRUPO": "Intermediarios",
+        "NIVEL": "Anos Iniciais",
+        "DIRETOR": 98,
+        "VICE_DIRETOR": 97,
+        "COORDENADOR": 100
+    },
+    {
+        "ANO": "2017",
+        "GRUPO": "Piores",
+        "NIVEL": "Anos Iniciais",
+        "DIRETOR": 99,
+        "VICE_DIRETOR": 99,
+        "COORDENADOR": 100
+    },
+    {
+        "ANO": "2018",
+        "GRUPO": "Melhores",
+        "NIVEL": "Anos Iniciais",
+        "DIRETOR": 98,
+        "VICE_DIRETOR": 86,
+        "COORDENADOR": 98
+    },
+    {
+        "ANO": "2018",
+        "GRUPO": "Intermediarios",
+        "NIVEL": "Anos Iniciais",
+        "DIRETOR": 97,
+        "VICE_DIRETOR": 97,
+        "COORDENADOR": 97
+    },
+    {
+        "ANO": "2018",
+        "GRUPO": "Piores",
+        "NIVEL": "Anos Iniciais",
+        "DIRETOR": 100,
+        "VICE_DIRETOR": 92,
+        "COORDENADOR": 100
+    }
+]

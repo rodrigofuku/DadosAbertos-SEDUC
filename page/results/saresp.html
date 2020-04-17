@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SARESP</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>    
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-2" align="center"><img src="../img/logo_seduc.png" width="150px"></div>
+    
+        <nav class="navbar navbar-dark bg-primary navbar-fixed-top col-10">
+            <div class="container">
+                <button onclick="{paginaInicial()}" type="button" class="btn btn-secondary btn-md tamanho_botao">INÍCIO</button>
+                <button onclick="{professores()}" type="button" class="btn btn-secondary btn-md tamanho_botao">PROFESSORES</button>
+                <button onclick="{gestores()}" type="button" class="btn btn-secondary btn-md tamanho_botao">DIRETORES</button>
+                <button onclick="{idesp()}" type="button" class="btn btn-secondary btn-md tamanho_botao">IDESP</button>
+                
+            </div>
+       
+    </nav>
+    </div>
+    <div class="title">
+        <h1><u>SARESP</u></h1>
+    </div>
+ 
+    <br>
+    
+    <div class="container row">
+        
+        <div class="col-6">
+              <div align="center">
+                  <h5><b>Geral</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Língua Portuguesa</h3>
+              </div>
+              
+              <div align="center" id="geral_LP_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 1.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="geral_LP_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 3.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+              <div align="center">
+                  <h5><b>Geral</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Língua Portuguesa</h3>
+              </div>
+              
+              <div align="center" id="geral_LP_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 5.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="geral_LP_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 7.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+        </div>
+ 
+ 
+ 
+        
+        <div class="col-6">
+             <div align="center">
+                  <h5><b>Geral</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Matemática</h3>
+              </div>
+              
+              <div align="center" id="geral_MAT_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 2.</b> Desempenho x Aulas sem docentes (MAT)</p><br>
+              
+              <div align="center" id="geral_MAT_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 4.</b> Desempenho x Aulas livres (MAT)</p><br>
+              
+              <div align="center">
+                  <h5><b>Geral</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Matemática</h3>
+              </div>
+              
+              <div align="center" id="geral_MAT_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 6.</b> Desempenho x Aulas sem docentes (MAT)</p><br>
+              
+              <div align="center" id="geral_MAT_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 8.</b> Desempenho x Aulas livres (MAT)</p><br>
+              
+        </div>
+    </div>
+    
+ 
+ 
+ 
+ 
+    <div class="container row">
+  
+        <div class="col-4">
+              
+              <div align="center">
+                  <h5><b>Anos Iniciais</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Língua Portuguesa</h3>
+              </div>
+              
+              <div align="center" id="AI_LP_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 9.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AI_LP_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 12.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+            
+            <div align="center">
+                  <h5><b>Anos Iniciais</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Língua Portuguesa</h3>
+              </div>
+              
+              <div align="center" id="AI_LP_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 15.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AI_LP_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 18.</b> Desempenho x Aulas livres (LP)</p><br>
+        </div>
+   
+   
+   
+        <div class="col-4">
+            
+             <div align="center">
+                  <h5><b>Anos Finais</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Língua Portuguesa</h3>
+              </div>
+              
+             <div align="center" id="AF_LP_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 10.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AF_LP_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 13.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+              <div align="center">
+                  <h5><b>Anos Finais</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Língua Portuguesa</h3>
+              </div>
+              
+             <div align="center" id="AF_LP_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 16.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AF_LP_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 19.</b> Desempenho x Aulas livres (LP)</p><br>
+        </div>
+    
+    
+    
+        <div class="col-4">
+              <div align="center">
+                  <h5><b>Ensino Médio</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Língua Portuguesa</h3>
+                  
+              </div>
+             
+              <div align="center" id="EM_LP_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 11.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="EM_LP_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 14.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+              
+              <div align="center">
+                  <h5><b>Ensino Médio</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Língua Portuguesa</h3>
+                  
+              </div>
+             
+              <div align="center" id="EM_LP_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 17.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="EM_LP_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 20.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="container row">
+  
+        <div class="col-4">
+              
+              <div align="center">
+                  <h5><b>Anos Iniciais</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Matemática</h3>
+              </div>
+              
+              <div align="center" id="AI_MAT_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 21.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AI_MAT_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 24.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+            
+            <div align="center">
+                  <h5><b>Anos Iniciais</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Matemática</h3>
+              </div>
+              
+              <div align="center" id="AI_MAT_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 27.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AI_MAT_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 30.</b> Desempenho x Aulas livres (LP)</p><br>
+        </div>
+   
+   
+   
+        <div class="col-4">
+            
+             <div align="center">
+                  <h5><b>Anos Finais</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Matemática</h3>
+              </div>
+              
+             <div align="center" id="AF_MAT_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 22.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AF_MAT_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 25.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+              <div align="center">
+                  <h5><b>Anos Finais</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Matemática</h3>
+              </div>
+              
+             <div align="center" id="AF_MAT_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 28.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="AF_MAT_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 31.</b> Desempenho x Aulas livres (LP)</p><br>
+        </div>
+    
+    
+    
+        <div class="col-4">
+              <div align="center">
+                  <h5><b>Ensino Médio</b></h5>
+                  <h2><b>2018</b></h2>
+                  <h3>Matemática</h3>
+                  
+              </div>
+             
+              <div align="center" id="EM_MAT_2018_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 23.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="EM_MAT_2018_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 26.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+              
+              <div align="center">
+                  <h5><b>Ensino Médio</b></h5>
+                  <h2><b>2017</b></h2>
+                  <h3>Matemática</h3>
+                  
+              </div>
+             
+              <div align="center" id="EM_MAT_2017_aulas_sem_docentes">
+              </div>
+              <p align="center"><b>Gráfico 29.</b> Desempenho x Aulas sem docentes (LP)</p><br>
+              
+              <div align="center" id="EM_MAT_2017_aulas_livres">
+              </div>
+              <p align="center"><b>Gráfico 32.</b> Desempenho x Aulas livres (LP)</p><br>
+              
+        </div>
+    </div>
+
+        
+        
+    
+
+    
+    
+
+    <script type="text/javascript" src="../script/initialpage.js"></script>
+
+    <script>
+        let geral_LP_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_LP_2018_aulas_sem_docentes", geral_LP_2018_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let geral_LP_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_LP_2018_aulas_livres", geral_LP_2018_aulas_livres, {});
+    </script>
+    <script>
+        let geral_MAT_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_MAT_2018_aulas_sem_docentes", geral_MAT_2018_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let geral_MAT_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_MAT_2018_aulas_livres", geral_MAT_2018_aulas_livres, {});
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        let geral_LP_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_LP_2017_aulas_sem_docentes", geral_LP_2017_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let geral_LP_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_LP_2017_aulas_livres", geral_LP_2017_aulas_livres, {});
+    </script>
+
+
+
+
+
+    <script>
+        let geral_MAT_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_MAT_2017_aulas_sem_docentes", geral_MAT_2017_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let geral_MAT_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 450,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_Geral.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#geral_MAT_2017_aulas_livres", geral_MAT_2017_aulas_livres, {});
+    </script>
+
+
+
+
+
+
+    <script>
+        let AI_LP_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_LP_2018_aulas_sem_docentes", AI_LP_2018_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let AF_LP_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_LP_2018_aulas_sem_docentes", AF_LP_2018_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let EM_LP_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_LP_2018_aulas_sem_docentes", EM_LP_2018_aulas_sem_docentes, {});
+    </script>
+
+    <script>
+        let AI_LP_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_LP_2018_aulas_livres", AI_LP_2018_aulas_livres, {});
+    </script>
+    <script>
+        let AF_LP_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_LP_2018_aulas_livres", AF_LP_2018_aulas_livres, {});
+    </script>
+    <script>
+        let EM_LP_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_LP_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_LP_2018_aulas_livres", EM_LP_2018_aulas_livres, {});
+    </script>
+
+
+
+
+    <script>
+        let AI_MAT_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_MAT_2018_aulas_sem_docentes", AI_MAT_2018_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let AF_MAT_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_MAT_2018_aulas_sem_docentes", AF_MAT_2018_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let EM_MAT_2018_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_MAT_2018_aulas_sem_docentes", EM_MAT_2018_aulas_sem_docentes, {});
+    </script>
+
+    <script>
+        let AI_MAT_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_MAT_2018_aulas_livres", AI_MAT_2018_aulas_livres, {});
+    </script>
+    <script>
+        let AF_MAT_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_MAT_2018_aulas_livres", AF_MAT_2018_aulas_livres, {});
+    </script>
+    <script>
+        let EM_MAT_2018_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2018_MAT_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_MAT_2018_aulas_livres", EM_MAT_2018_aulas_livres, {});
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let AI_LP_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_LP_2017_aulas_sem_docentes", AI_LP_2017_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let AF_LP_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_LP_2017_aulas_sem_docentes", AF_LP_2017_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let EM_LP_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_LP_2017_aulas_sem_docentes", EM_LP_2017_aulas_sem_docentes, {});
+    </script>
+
+    <script>
+        let AI_LP_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_LP_2017_aulas_livres", AI_LP_2017_aulas_livres, {});
+    </script>
+    <script>
+        let AF_LP_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_LP_2017_aulas_livres", AF_LP_2017_aulas_livres, {});
+    </script>
+    <script>
+        let EM_LP_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_LP_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_LP",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_LP",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_LP_2017_aulas_livres", EM_LP_2017_aulas_livres, {});
+    </script>
+
+
+
+
+    <script>
+        let AI_MAT_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_MAT_2017_aulas_sem_docentes", AI_MAT_2017_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let AF_MAT_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_MAT_2017_aulas_sem_docentes", AF_MAT_2017_aulas_sem_docentes, {});
+    </script>
+    <script>
+        let EM_MAT_2017_aulas_sem_docentes = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_SEM_DOCENTES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_SEM_DOCENTES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_MAT_2017_aulas_sem_docentes", EM_MAT_2017_aulas_sem_docentes, {});
+    </script>
+
+    <script>
+        let AI_MAT_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_5_AI.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AI_MAT_2017_aulas_livres", AI_MAT_2017_aulas_livres, {});
+    </script>
+    <script>
+        let AF_MAT_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_9_AF.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#AF_MAT_2017_aulas_livres", AF_MAT_2017_aulas_livres, {});
+    </script>
+    <script>
+        let EM_MAT_2017_aulas_livres = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                  "width": 250,
+                  "height": 250,
+                  "data": {
+                    "url": "../database/SARESP/SARESP_2017_MAT_3_EM.json"
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "point",
+                        "filled": true
+                      },
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "line",
+                        "color": "firebrick"
+                      },
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT"
+                        }
+                      ],
+                      "encoding": {
+                        "x": {
+                          "field": "AULAS_LIVRES_MAT",
+                          "type": "quantitative"
+                        },
+                        "y": {
+                          "field": "DESEMPENHO_MED",
+                          "type": "quantitative"
+                        }
+                      }
+                    },
+                    {
+                      "transform": [
+                        {
+                          "regression": "DESEMPENHO_MED",
+                          "on": "AULAS_LIVRES_MAT",
+                          "params": true
+                        },
+                        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+                      ],
+                      "mark": {
+                        "type": "text",
+                        "color": "firebrick",
+                        "x": "width",
+                        "align": "right",
+                        "y": -5
+                      },
+                      "encoding": {
+                        "text": {"type": "nominal", "field": "R2"}
+                      }
+                    }
+                  ]
+                }
+
+                vegaEmbed("#EM_MAT_2017_aulas_livres", EM_MAT_2017_aulas_livres, {});
+    </script>
+
+</body>
+
+
+</html>
