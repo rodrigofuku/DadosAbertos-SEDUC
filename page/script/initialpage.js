@@ -1,5 +1,5 @@
 function paginaInicial(){
-    fetch('http://penguin.linux.test:4000')
+    fetch('/')
     .then((response) => {
         console.log(response);
         window.location.replace(response.url);
@@ -11,7 +11,7 @@ function paginaInicial(){
 }
 
 function professores(){
-    fetch('http://penguin.linux.test:4000/professores')
+    fetch('/professores')
     .then((response) => {
         console.log(response);
         window.location.replace(response.url);
@@ -23,7 +23,7 @@ function professores(){
 }
 
 function gestores(){
-    fetch('http://penguin.linux.test:4000/gestores')
+    fetch('/gestores')
     .then((response) => {
         console.log(response);
         window.location.replace(response.url);
@@ -35,7 +35,7 @@ function gestores(){
 }
 
 function idesp(){
-    fetch('http://penguin.linux.test:4000/idesp')
+    fetch('/idesp')
     .then((response) => {
         console.log(response);
         window.location.replace(response.url);
@@ -47,7 +47,7 @@ function idesp(){
 }
 
 function saresp(){
-    fetch('http://penguin.linux.test:4000/saresp')
+    fetch('/saresp')
     .then((response) => {
         console.log(response);
         window.location.replace(response.url);
